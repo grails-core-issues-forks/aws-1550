@@ -21,9 +21,13 @@ dependencies {
     implementation("io.micronaut:micronaut-validation")
 
     testImplementation("io.micronaut:micronaut-http-client")
-
 }
 
+configurations.all {
+    resolutionStrategy {
+        force "com.amazonaws.serverless:aws-serverless-java-container:1.9.1"
+    }
+}
 
 application {
     mainClass.set("temp.Application")
